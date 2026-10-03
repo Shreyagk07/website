@@ -1,0 +1,565 @@
+{
+  "profile": {
+    "name": "Shreya G K",
+    "headline": "Software Engineer · AI Systems · Test Automation",
+    "value_prop": "I build Python systems where AI answers stay grounded in sources, APIs stay predictable, and automated tests give changes a safety net.",
+    "summary": "Graduate Engineer Trainee at HCLTech, Bengaluru, with project work across multi-agent AI evaluation, retrieval-augmented generation, transactional backends and Selenium-based test automation.",
+    "email": "shreyagk6899@gmail.com",
+    "location": "Bangalore, Karnataka",
+    "github": "https://github.com/Shreyagk07",
+    "linkedin": "https://www.linkedin.com/in/shreya-gk07",
+    "languages": [
+      "English",
+      "Kannada",
+      "Hindi"
+    ],
+    "resume_file": null
+  },
+  "status_labels": {
+    "live": "Live demo",
+    "completed": "Completed",
+    "in-development": "In development",
+    "resume": "Resume-described · unverified"
+  },
+  "roles": [
+    {
+      "id": "swe",
+      "label": "Software Engineer"
+    },
+    {
+      "id": "backend",
+      "label": "Python / Backend"
+    },
+    {
+      "id": "ai",
+      "label": "AI Engineer"
+    },
+    {
+      "id": "qa",
+      "label": "QA Automation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "grounded-ai",
+      "title": "Grounded AI answers",
+      "text": "Query planning, dense retrieval with cross-encoder reranking, a corrective loop that grades context sufficiency, and abstention when grounding is weak.",
+      "roles": [
+        "ai",
+        "swe",
+        "backend"
+      ],
+      "project": "agentic-rag",
+      "demo": "rag"
+    },
+    {
+      "id": "reliable-apis",
+      "title": "Reliable APIs",
+      "text": "Idempotent checkout APIs and HMAC-signed webhooks in Ticket Ledger; JWT auth, role-based access and idempotent Stripe webhooks in SlotSync.",
+      "roles": [
+        "backend",
+        "swe"
+      ],
+      "project": "ticket-ledger",
+      "demo": null
+    },
+    {
+      "id": "resilient-automation",
+      "title": "Resilient automation",
+      "text": "A hybrid Selenium framework with Page Object Model, BDD, API and database checks and parallel Selenium Grid runs, plus a scraper that retries with backoff and repairs broken selectors.",
+      "roles": [
+        "qa",
+        "backend",
+        "swe"
+      ],
+      "project": "orangehrm-qa",
+      "demo": null
+    },
+    {
+      "id": "db-consistency",
+      "title": "Database consistency",
+      "text": "Row-level locking and double-entry ledger entries in Ticket Ledger; exclusion constraints and Row-Level Security in SlotSync.",
+      "roles": [
+        "backend",
+        "swe"
+      ],
+      "project": "ticket-ledger",
+      "demo": "tickets"
+    },
+    {
+      "id": "regression-confidence",
+      "title": "Regression confidence",
+      "text": "Mutation testing to measure suite effectiveness, and a flaky-test detector that reruns tests and quarantines unstable ones.",
+      "roles": [
+        "qa",
+        "swe"
+      ],
+      "project": "testlab",
+      "demo": "flaky"
+    }
+  ],
+  "projects": [
+    {
+      "id": "red-team",
+      "title": "Adversarial Multi-Agent Red-Team System",
+      "short": "Multi-agent platform that stress-tests AI agents and scores their robustness.",
+      "status": "live",
+      "featured": true,
+      "url": "https://adversarial-red-team-wgkycbgs6hhd6bffq3vltf.streamlit.app/",
+      "github": null,
+      "art": "redteam",
+      "roles": [
+        "ai",
+        "backend",
+        "qa"
+      ],
+      "problem": null,
+      "approach": "A multi-agent robustness-testing platform that automatically stress-tests AI agents. A challenger agent generates probing test cases across configurable categories, and a judge agent scores each response with a severity rating.",
+      "decisions": [
+        "Automated before/after regression suite that quantifies robustness gains after hardening, producing per-category vulnerability scores and structured mitigation reports",
+        "Every run instrumented with step-level tracing of token cost, latency, and failure modes",
+        "Full run history persisted to a SQL database and surfaced through a Streamlit dashboard"
+      ],
+      "stack": [
+        "Python",
+        "LangGraph",
+        "LangChain",
+        "FastAPI",
+        "Langfuse",
+        "SQL",
+        "Streamlit"
+      ],
+      "evidence": "Live hosted demo. Project repository URL not supplied, so no repository button is shown.",
+      "reported": []
+    },
+    {
+      "id": "web-monitor",
+      "title": "Intelligent Web Scraping & Monitoring System",
+      "short": "Automated web monitoring with multi-strategy scraping and self-healing selectors.",
+      "status": "live",
+      "featured": true,
+      "url": "https://intelligent-web-monitor-lstnomlxvuraa96sriyqkz.streamlit.app/",
+      "github": null,
+      "art": "scraper",
+      "roles": [
+        "backend",
+        "qa",
+        "swe"
+      ],
+      "problem": null,
+      "approach": "An automated monitoring platform with multi-strategy scraping that escalates from a static fetch to a Selenium browser only when JavaScript rendering is required, then extracts schema-validated structured data from messy HTML.",
+      "decisions": [
+        "Escalation from static fetch to a Selenium browser only when JavaScript rendering is required",
+        "Schema-validated structured data extracted from messy HTML",
+        "Self-healing selectors that detect and repair broken extractors when a site's layout changes",
+        "Fault-tolerant scheduled scraping with retries, exponential backoff, and automatic skipping of failing targets",
+        "Semantic change detection with smart alerting through a Streamlit dashboard"
+      ],
+      "stack": [
+        "Python",
+        "Selenium",
+        "BeautifulSoup",
+        "FastAPI",
+        "Pydantic",
+        "APScheduler",
+        "SQL",
+        "Streamlit"
+      ],
+      "evidence": "Live hosted demo. No impact metrics or results were supplied, so none are shown. Project repository URL not supplied, so no repository button is shown.",
+      "reported": []
+    },
+    {
+      "id": "agentic-rag",
+      "title": "Production Agentic RAG System",
+      "short": "Agentic RAG with query planning, reranking, a corrective loop and abstention.",
+      "status": "live",
+      "featured": true,
+      "url": "https://appuction-agentic-rag-g2kdshjlkunoxdvejujqyj.streamlit.app/",
+      "github": null,
+      "art": "rag",
+      "roles": [
+        "ai",
+        "backend",
+        "swe"
+      ],
+      "problem": null,
+      "approach": "An agentic Retrieval-Augmented Generation system, built and deployed, with query planning that decomposes multi-part questions into sub-queries and synthesizes combined, source-cited answers.",
+      "decisions": [
+        "Dense vector retrieval in ChromaDB with cross-encoder reranking (a single retrieval method, so not described as hybrid)",
+        "A corrective retrieval loop that grades context sufficiency before answering",
+        "Grounding-score-based abstention to reduce unsupported answers",
+        "Automated evaluation harness using RAGAS faithfulness, answer relevancy, context precision and context recall, integrated into continuous integration",
+        "Semantic caching, and Langfuse tracing of cost and latency"
+      ],
+      "stack": [
+        "Python",
+        "LangGraph",
+        "LangChain",
+        "FastAPI",
+        "ChromaDB",
+        "RAGAS",
+        "Langfuse",
+        "Streamlit"
+      ],
+      "evidence": "Live hosted demo. No evaluation scores or numerical improvements were supplied, so none are shown, and the demo is not an independent verification of production readiness. Project repository URL not supplied, so no repository button is shown.",
+      "reported": []
+    },
+    {
+      "id": "ticket-ledger",
+      "title": "Ticket Ledger",
+      "short": "Flash-sale ticketing platform with a double-entry ledger.",
+      "status": "resume",
+      "featured": false,
+      "url": null,
+      "github": null,
+      "art": "ledger",
+      "roles": [
+        "backend",
+        "swe"
+      ],
+      "problem": null,
+      "approach": "A flash-sale ticketing platform where purchases, holds, and refunds post balanced entries to a double-entry ledger.",
+      "decisions": [
+        "Atomic inventory reservation using PostgreSQL row-level locking and Redis",
+        "Time-limited ticket holds automatically released by Celery background workers",
+        "Idempotent checkout REST APIs using idempotency keys",
+        "HMAC-signed payment webhooks with exponential-backoff retries",
+        "Automated reconciliation job that verifies ledger integrity"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Celery",
+        "React",
+        "Docker",
+        "GitHub Actions",
+        "Locust"
+      ],
+      "evidence": "Described on the resume only; no demo or repository supplied. The load-test result is the resume's claim and is not independently verified. A throughput number was not supplied, so none is shown.",
+      "reported": [
+        "Zero oversold tickets under the tested load, while a naive baseline oversold tickets under identical load."
+      ]
+    },
+    {
+      "id": "slotsync",
+      "title": "SlotSync",
+      "short": "Multi-tenant appointment booking SaaS for clinics and salons.",
+      "status": "resume",
+      "featured": false,
+      "url": null,
+      "github": null,
+      "art": "slotsync",
+      "roles": [
+        "backend",
+        "swe"
+      ],
+      "problem": null,
+      "approach": "A multi-tenant SaaS web application in Django and DRF for clinics and salons to manage services, staff, and bookings, with tenant data isolation enforced by PostgreSQL Row-Level Security.",
+      "decisions": [
+        "JWT authentication and role-based access control for owner, staff, and customer roles",
+        "Timezone-aware slot scheduling",
+        "Double-bookings prevented at the database level with PostgreSQL exclusion constraints, verified by concurrent-request tests",
+        "Stripe subscription billing in test mode with idempotent webhooks, Celery-driven email reminders, and audit logging",
+        "Shipped with pytest suites and GitHub Actions CI"
+      ],
+      "stack": [
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Celery",
+        "Redis",
+        "Stripe API",
+        "Docker",
+        "pytest"
+      ],
+      "evidence": "Described on the resume only; no demo or repository supplied.",
+      "reported": []
+    },
+    {
+      "id": "orangehrm-qa",
+      "title": "End-to-End QA & Hybrid Test Automation Framework",
+      "short": "Full STLC and hybrid automation framework for a self-hosted OrangeHRM.",
+      "status": "resume",
+      "featured": false,
+      "url": null,
+      "github": null,
+      "art": "qa",
+      "roles": [
+        "qa",
+        "swe"
+      ],
+      "problem": null,
+      "approach": "The full STLC executed on a self-hosted OrangeHRM application, from test plan and manual cases to a hybrid automation framework with nightly pipelines.",
+      "decisions": [
+        "Authored a test plan, manual test cases using boundary value analysis and equivalence partitioning, and a requirements traceability matrix",
+        "Logged defects in Jira with severity, priority, and steps to reproduce",
+        "Hybrid framework using Page Object Model, data-driven testing with Apache POI, and Cucumber BDD for UI regression scenarios",
+        "REST Assured API tests and JDBC database validation to confirm UI actions persisted correctly",
+        "Cross-browser tests run in parallel on a Dockerized Selenium Grid",
+        "Nightly Jenkins and GitHub Actions pipelines publishing Allure reports with failure screenshots"
+      ],
+      "stack": [
+        "Java",
+        "Selenium WebDriver",
+        "TestNG",
+        "Cucumber",
+        "REST Assured",
+        "JDBC",
+        "MySQL",
+        "Maven",
+        "Selenium Grid",
+        "Docker",
+        "Jenkins",
+        "GitHub Actions",
+        "Allure",
+        "Jira"
+      ],
+      "evidence": "Described on the resume only; no repository or reports supplied. The figures are resume claims, not independently verified benchmarks.",
+      "reported": [
+        "50 manual test cases",
+        "12 defects logged in Jira",
+        "40 UI regression scenarios automated",
+        "Regression runtime reduced from 45 to 15 minutes with parallel runs on Selenium Grid"
+      ]
+    },
+    {
+      "id": "testlab",
+      "title": "TestLab",
+      "short": "Mutation-testing harness and flaky-test detector for a Selenium suite.",
+      "status": "resume",
+      "featured": false,
+      "url": null,
+      "github": null,
+      "art": "testlab",
+      "roles": [
+        "qa",
+        "backend",
+        "swe"
+      ],
+      "problem": null,
+      "approach": "A mutation-testing harness that injects 25 controlled defects into a Dockerized web application, plus a flaky-test detector, used to judge how effective a Selenium regression suite is.",
+      "decisions": [
+        "Injected defects include removed elements, broken validations, wrong calculations, and delayed loads",
+        "Mutation score defined as the share of injected defects detected by the Selenium regression suite",
+        "Flaky-test detector reruns each test five times in parallel",
+        "Root causes classified into synchronization, locator, test data, and environment",
+        "Unstable tests automatically quarantined from the CI quality gate"
+      ],
+      "stack": [
+        "Java",
+        "Selenium WebDriver",
+        "TestNG",
+        "Selenium Grid",
+        "Docker",
+        "MySQL",
+        "GitHub Actions",
+        "Allure"
+      ],
+      "evidence": "Described on the resume only; no repository supplied. No mutation-score percentage was supplied, so none is shown. The playground demo below is a separate illustrative tool, not this project.",
+      "reported": []
+    }
+  ],
+  "experience": [
+    {
+      "role": "Graduate Engineer Trainee",
+      "company": "HCLTech",
+      "place": "Bengaluru, Karnataka",
+      "start": "Dec 2025",
+      "end": "Present",
+      "points": [
+        "Delivering enterprise-grade software solutions on the Elders project, applying full-stack development and QA testing skills in a production environment.",
+        "Collaborating cross-functionally with distributed teams to meet project requirements, adhere to SDLC, and ensure software quality through systematic defect analysis."
+      ]
+    },
+    {
+      "role": "Scholar Trainee",
+      "company": "HCLTech",
+      "place": "Chennai, Tamil Nadu",
+      "start": "Jun 2025",
+      "end": "Oct 2025",
+      "points": [
+        "Completed enterprise-level training in Java, Selenium Automation Testing, SQL, and Full Stack Development.",
+        "Built scalable automation frameworks and executed end-to-end test scenarios, improving software quality through automated validation and defect analysis.",
+        "Designed and deployed test suites using Selenium WebDriver, applying TDD best practices across functional and regression testing."
+      ]
+    },
+    {
+      "role": "Data Science Intern",
+      "company": "Compsoft Technologies",
+      "place": "Bengaluru, Karnataka",
+      "start": "Sep 2024",
+      "end": "Jan 2025",
+      "points": [
+        "Analyzed healthcare datasets and developed data science solutions for real-time medical problems, improving diagnostic data workflows.",
+        "Applied Python-based data processing, visualization, and machine learning techniques to extract actionable insights from complex datasets."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "group": "Backend",
+      "items": [
+        {
+          "name": "Python",
+          "project": "ticket-ledger"
+        },
+        {
+          "name": "FastAPI",
+          "project": "ticket-ledger"
+        },
+        {
+          "name": "Django & DRF",
+          "project": "slotsync"
+        },
+        {
+          "name": "Java",
+          "project": "orangehrm-qa"
+        },
+        {
+          "name": "Celery & Redis",
+          "project": "ticket-ledger"
+        },
+        {
+          "name": "React",
+          "project": "ticket-ledger"
+        },
+        {
+          "name": "Pydantic & APScheduler",
+          "project": "web-monitor"
+        }
+      ]
+    },
+    {
+      "group": "AI & data",
+      "items": [
+        {
+          "name": "LangGraph",
+          "project": "red-team"
+        },
+        {
+          "name": "LangChain",
+          "project": "agentic-rag"
+        },
+        {
+          "name": "ChromaDB",
+          "project": "agentic-rag"
+        },
+        {
+          "name": "RAGAS",
+          "project": "agentic-rag"
+        },
+        {
+          "name": "Langfuse",
+          "project": "red-team"
+        },
+        {
+          "name": "Data analysis & ML in Python",
+          "project": null
+        },
+        {
+          "name": "Cross-encoder reranking",
+          "project": "agentic-rag"
+        }
+      ]
+    },
+    {
+      "group": "Testing",
+      "items": [
+        {
+          "name": "Selenium WebDriver",
+          "project": "orangehrm-qa"
+        },
+        {
+          "name": "TestNG & Cucumber",
+          "project": "orangehrm-qa"
+        },
+        {
+          "name": "REST Assured",
+          "project": "orangehrm-qa"
+        },
+        {
+          "name": "pytest",
+          "project": "slotsync"
+        },
+        {
+          "name": "Selenium Grid",
+          "project": "testlab"
+        },
+        {
+          "name": "Allure",
+          "project": "testlab"
+        },
+        {
+          "name": "Locust",
+          "project": "ticket-ledger"
+        }
+      ]
+    },
+    {
+      "group": "Databases",
+      "items": [
+        {
+          "name": "PostgreSQL",
+          "project": "slotsync"
+        },
+        {
+          "name": "MySQL & JDBC",
+          "project": "orangehrm-qa"
+        },
+        {
+          "name": "SQL",
+          "project": "red-team"
+        }
+      ]
+    },
+    {
+      "group": "Engineering tools",
+      "items": [
+        {
+          "name": "Docker",
+          "project": "ticket-ledger"
+        },
+        {
+          "name": "GitHub Actions",
+          "project": "slotsync"
+        },
+        {
+          "name": "Jenkins",
+          "project": "orangehrm-qa"
+        },
+        {
+          "name": "Maven & Jira",
+          "project": "orangehrm-qa"
+        },
+        {
+          "name": "Stripe API",
+          "project": "slotsync"
+        },
+        {
+          "name": "Streamlit",
+          "project": "red-team"
+        },
+        {
+          "name": "BeautifulSoup & Selenium scraping",
+          "project": "web-monitor"
+        }
+      ]
+    }
+  ],
+  "education": {
+    "degree": "B.E., Electronics and Communication Engineering",
+    "school": "Don Bosco Institute of Technology, Bengaluru",
+    "years": "2021–2025",
+    "cgpa": "8.84"
+  },
+  "certifications": [
+    "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+    "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+    "100 Days of Code: The Complete Python Pro Bootcamp",
+    "Google Analytics for Beginners",
+    "Blockchain A-Z: Learn How To Build Your First Blockchain"
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><style>@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style><style>.a{stroke-dasharray:8 8;animation:d 6s linear infinite}@keyframes d{to{stroke-dashoffset:-96}}.s{animation:s 3.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}@keyframes s{50%{transform:scale(1.06)}}</style>
+<rect width="600" height="400" fill="#ffcfc5"/><circle cx="520" cy="350" r="120" fill="#fee3c5" opacity=".8"/>
+<g stroke="#5f051c" stroke-width="2" opacity=".5" fill="none"><path d="M80 90 L180 200 L80 310 M180 200 L110 200 M80 90 L110 200 M80 310 L110 200"/></g>
+<g class="a" stroke="#82192a" stroke-width="3.5" fill="none"><path d="M180 200 H360"/><path d="M180 200 L370 130"/><path d="M180 200 L370 270"/></g>
+<g fill="#82192a" stroke="#5f051c" stroke-width="3"><circle cx="80" cy="90" r="22"/><circle cx="80" cy="310" r="22"/><circle cx="110" cy="200" r="18"/></g><circle cx="180" cy="200" r="28" fill="#5f051c"/><text x="180" y="205" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#fee3c5" text-anchor="middle">lead</text>
+<path class="s" d="M450 100 L530 130 V210 C530 260 490 290 450 305 C410 290 370 260 370 210 V130 Z" fill="#d2e8ff" stroke="#5f051c" stroke-width="4"/>
+<path d="M418 205 L441 228 L486 175" fill="none" stroke="#5f051c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

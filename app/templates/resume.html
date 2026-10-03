@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Resume — Shreya G K{% endblock %}
+{% block main %}
+<article class="section resume">
+  <header class="resume-head">
+    <div>
+      <h1 class="h-section">{{ p.profile.name }}</h1>
+      <p class="positioning">{{ p.profile.headline }}</p>
+    </div>
+    <p class="no-print btn-row">
+      <button type="button" class="btn btn-primary js-only" id="print-btn">Print / Save as PDF</button>
+      {% if p.profile.resume_file %}<a class="btn btn-ghost" href="{{ p.profile.resume_file }}" download>Download resume</a>{% endif %}
+      <a class="btn btn-ghost" href="/">Portfolio</a>
+    </p>
+  </header>
+  <p class="muted no-print">To save a PDF, use your browser's Print dialog and choose “Save as PDF”.</p>
+  <p class="r-contact">{{ p.profile.email }} · {{ p.profile.location }}<br>
+    {{ p.profile.github | replace('https://', '') }} · {{ p.profile.linkedin | replace('https://www.', '') }}<br>
+    Languages: {{ p.profile.languages | join(', ') }}</p>
+  <p>{{ p.profile.summary }}</p>
+
+  <h2>Experience</h2>
+  {% for e in p.experience %}
+  <div class="r-item"><p><strong>{{ e.role }}</strong> — {{ e.company }}, {{ e.place }}<span class="r-date">{{ e.start }} – {{ e.end }}</span></p>
+    {% if e.points %}<ul>{% for pt in e.points %}<li>{{ pt }}</li>{% endfor %}</ul>{% endif %}</div>
+  {% endfor %}
+
+  <h2>Projects</h2>
+  {% for x in p.projects %}
+  <div class="r-item"><p><strong>{{ x.title }}</strong> — {{ x.short }}
+    {% if x.url %}<br><a href="{{ x.url }}">{{ x.url }}</a>{% endif %}</p>
+    <p class="muted">{{ x.stack | join(' · ') }} · {{ p.status_labels[x.status] }}</p></div>
+  {% endfor %}
+
+  <h2>Skills</h2>
+  {% for g in p.skills %}<p><strong>{{ g.group }}:</strong> {% for i in g.items %}{{ i.name }}{{ ', ' if not loop.last }}{% endfor %}</p>{% endfor %}
+
+  <h2>Education</h2>
+  <p><strong>{{ p.education.degree }}</strong> — {{ p.education.school }}<span class="r-date">{{ p.education.years }}</span><br>CGPA {{ p.education.cgpa }}</p>
+  {% if p.certifications %}<h2>Certifications</h2><ul>{% for c in p.certifications %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
+</article>
+{% endblock %}

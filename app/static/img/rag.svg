@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><style>@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style><style>.e{stroke-dasharray:5 7;animation:d 9s linear infinite}@keyframes d{to{stroke-dashoffset:-96}}.p{animation:p 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}@keyframes p{50%{transform:scale(1.15)}}</style>
+<rect width="600" height="400" fill="#d2e8ff"/><circle cx="500" cy="60" r="90" fill="#fbf59c" opacity=".7"/>
+<g stroke="#5f051c" stroke-width="2" fill="none" opacity=".5"><path d="M110 200 L230 90 M110 200 L230 200 M110 200 L230 310 M230 90 L360 140 M230 200 L360 140 M230 200 L360 260 M230 310 L360 260"/></g>
+<g class="e" stroke="#82192a" stroke-width="3.5" fill="none"><path d="M110 200 L230 200 L360 140 L440 190"/></g>
+<circle class="p" cx="110" cy="200" r="30" fill="#82192a"/><text x="110" y="205" font-family="Georgia,serif" font-size="16" fill="#fee3c5" text-anchor="middle" font-style="italic">query</text>
+<g fill="#fee3c5" stroke="#5f051c" stroke-width="3"><circle cx="230" cy="90" r="20"/><circle cx="230" cy="310" r="20"/></g>
+<g fill="#fbf59c" stroke="#5f051c" stroke-width="3"><circle cx="230" cy="200" r="22"/><circle cx="360" cy="140" r="24"/><circle cx="360" cy="260" r="20" fill="#fee3c5"/></g>
+<rect x="440" y="160" width="120" height="80" rx="10" fill="#fff4e6" stroke="#5f051c" stroke-width="3"/><g fill="#5f051c"><rect x="454" y="176" width="92" height="7" rx="3"/><rect x="454" y="192" width="70" height="7" rx="3"/><rect x="454" y="208" width="80" height="7" rx="3"/></g>
+<circle cx="552" cy="226" r="11" fill="#82192a"/><text x="552" y="231" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#fee3c5" text-anchor="middle">1</text>
+</svg>

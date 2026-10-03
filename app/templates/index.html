@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% from "macros.html" import project_links, case_study, status_chip %}
+{% block main %}
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="kicker reveal" data-d="0">Portfolio · Bengaluru</p>
+    <h1 id="hero-title" class="h-display reveal" data-d="1">{{ p.profile.name }}<span class="dot">.</span></h1>
+    <p class="positioning reveal" data-d="2">{{ p.profile.headline }}.</p>
+    <p class="lede reveal" data-d="3">{{ p.profile.value_prop }}</p>
+    <div class="btn-row reveal" data-d="4">
+      <a class="btn btn-primary" href="#projects">Explore Projects</a>
+      <a class="btn btn-ghost" href="/resume">View Resume</a>
+      <a class="btn btn-ghost" href="#contact">Contact</a>
+      <a class="btn btn-ghost" href="{{ p.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> profile (opens in new tab)</span> ↗</a>
+    </div>
+  </div>
+  <div class="hero-art reveal" data-d="2" data-parallax>
+    <svg viewBox="0 0 520 480" role="img" aria-labelledby="hero-art-t" class="hero-svg">
+      <title id="hero-art-t">Illustration of a retrieval graph, a balanced ledger and a test coverage grid layered together</title>
+      <g class="layer" data-depth="6">
+        <rect x="20" y="30" width="300" height="220" rx="22" fill="#d2e8ff"/>
+        <g stroke="#5f051c" stroke-width="1.6" fill="none" opacity=".55">
+          <path d="M80 140 L170 80 M80 140 L170 140 M80 140 L170 200 M170 80 L255 110 M170 140 L255 110 M170 200 L255 170 M170 140 L255 170"/>
+        </g>
+        <circle class="pulse" cx="80" cy="140" r="16" fill="#82192a"/>
+        <g fill="#fee3c5" stroke="#5f051c" stroke-width="2"><circle cx="170" cy="80" r="11"/><circle cx="170" cy="140" r="11"/><circle cx="170" cy="200" r="11"/></g>
+        <g fill="#fbf59c" stroke="#5f051c" stroke-width="2"><circle cx="255" cy="110" r="13"/><circle cx="255" cy="170" r="13"/></g>
+      </g>
+      <g class="layer" data-depth="14">
+        <rect x="230" y="180" width="260" height="170" rx="18" fill="#fee3c5" stroke="#5f051c" stroke-width="2.5"/>
+        <path d="M230 214 H490 M360 180 V350" stroke="#5f051c" stroke-width="1.6"/>
+        <g fill="#5f051c"><rect x="246" y="232" width="90" height="9" rx="4"/><rect x="246" y="258" width="60" height="9" rx="4"/><rect x="246" y="284" width="75" height="9" rx="4"/></g>
+        <g fill="#82192a"><rect class="grow" x="376" y="232" width="90" height="9" rx="4"/><rect class="grow" x="376" y="258" width="60" height="9" rx="4"/><rect class="grow" x="376" y="284" width="75" height="9" rx="4"/></g>
+        <path d="M246 328 H474" stroke="#5f051c" stroke-width="2.5"/>
+      </g>
+      <g class="layer" data-depth="24">
+        <rect x="60" y="290" width="190" height="150" rx="16" fill="#fbf59c" stroke="#5f051c" stroke-width="2.5"/>
+        <g stroke="#5f051c" stroke-width="1.4">
+          <rect x="78" y="310" width="30" height="30" rx="5" fill="#aba781"/><rect x="114" y="310" width="30" height="30" rx="5" fill="#aba781"/><rect x="150" y="310" width="30" height="30" rx="5" fill="#ffcfc5"/><rect x="186" y="310" width="30" height="30" rx="5" fill="#aba781"/>
+          <rect x="78" y="346" width="30" height="30" rx="5" fill="#aba781"/><rect class="flick" x="114" y="346" width="30" height="30" rx="5" fill="#82192a"/><rect x="150" y="346" width="30" height="30" rx="5" fill="#aba781"/><rect x="186" y="346" width="30" height="30" rx="5" fill="#aba781"/>
+          <rect x="78" y="382" width="30" height="30" rx="5" fill="#ffcfc5"/><rect x="114" y="382" width="30" height="30" rx="5" fill="#aba781"/><rect x="150" y="382" width="30" height="30" rx="5" fill="#aba781"/><rect x="186" y="382" width="30" height="30" rx="5" fill="#aba781"/>
+        </g>
+      </g>
+      <path class="draw" d="M320 90 C 420 70, 470 130, 440 180" fill="none" stroke="#82192a" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<section class="section" id="why" aria-labelledby="why-title">
+  <header class="sec-head reveal">
+    <p class="kicker">01 — Why hire me</p>
+    <h2 id="why-title" class="h-section">Claims, each one tied to evidence.</h2>
+    <p class="muted">Pick a role to bring the most relevant evidence to the top. Nothing is hidden — the full portfolio stays below.</p>
+  </header>
+  <div class="filters" role="group" aria-label="Filter evidence by role">
+    <button type="button" class="chip-btn" data-role="all" aria-pressed="true">All</button>
+    {% for r in p.roles %}<button type="button" class="chip-btn" data-role="{{ r.id }}" aria-pressed="false">{{ r.label }}</button>{% endfor %}
+  </div>
+  <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+  <ol class="claims" id="claims">
+    {% for c in p.claims %}
+    {% set proj = projects[c.project] %}
+    <li class="claim reveal" data-roles="{{ c.roles | join(' ') }}" data-order="{{ loop.index }}">
+      <span class="claim-n" aria-hidden="true">{{ '%02d' % loop.index }}</span>
+      <div>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+        <p class="claim-links">
+          <a href="#p-{{ proj.id }}">Evidence: {{ proj.title }}</a>
+          {% if c.demo %}<a href="#demo-{{ c.demo }}">Try the illustrative demo →</a>{% endif %}
+        </p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section" id="projects" aria-labelledby="proj-title">
+  <header class="sec-head reveal">
+    <p class="kicker">02 — Featured projects</p>
+    <h2 id="proj-title" class="h-section">Three live, four on the record.</h2>
+    <p class="muted">Live demos are hosted on Streamlit Community Cloud and may need a moment to wake up. Each project carries an honest status label.</p>
+  </header>
+
+  {% for x in featured %}
+  <article class="project feature reveal {{ 'flip' if loop.index is even }}" id="p-{{ x.id }}" data-roles="{{ x.roles | join(' ') }}">
+    <div class="art art-{{ x.art }}"><img src="/static/img/{{ x.art }}.svg" alt="" width="600" height="400" loading="lazy"></div>
+    <div class="project-body">
+      {{ status_chip(x, p) }}
+      <h3>{{ x.title }}</h3>
+      <p class="short">{{ x.short }}</p>
+      {{ project_links(x) }}
+      {{ case_study(x) }}
+    </div>
+  </article>
+  {% endfor %}
+
+  <h3 class="sub-head reveal">Also on the record</h3>
+  <div class="others">
+    {% for x in others %}
+    <article class="project compact reveal" id="p-{{ x.id }}" data-roles="{{ x.roles | join(' ') }}">
+      <div class="art art-{{ x.art }}"><img src="/static/img/{{ x.art }}.svg" alt="" width="600" height="400" loading="lazy"></div>
+      <div class="project-body">
+        {{ status_chip(x, p) }}
+        <h3>{{ x.title }}</h3>
+        <p class="short">{{ x.short }}</p>
+        {{ project_links(x) }}
+        {{ case_study(x) }}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="playground" aria-labelledby="play-title">
+  <header class="sec-head reveal">
+    <p class="kicker">03 — Engineering playground</p>
+    <h2 id="play-title" class="h-section">Small, deterministic demonstrations.</h2>
+    <p class="notice"><strong>Illustrative only.</strong> These run on bundled sample data in this site's own backend. They are not the full project systems, use no LLM or network calls, and their numbers are not project benchmarks.</p>
+    <noscript><p class="notice">The playground needs JavaScript to run. The project case studies above work without it.</p></noscript>
+  </header>
+
+  <div class="play js-only" id="demo-rag">
+    <h3>RAG flow explorer <span class="tag">sample data</span></h3>
+    <p class="muted">Plan → retrieve → context check → cited answer, over seven fictional help-centre passages.</p>
+    <form id="rag-form" class="inline-form" autocomplete="off">
+      <label for="rag-q">Question (max 200 characters)</label>
+      <div class="field-row">
+        <input id="rag-q" name="q" type="text" maxlength="200" minlength="3" required value="{{ questions[0] }}">
+        <button class="btn btn-primary" type="submit">Run</button>
+      </div>
+      <div class="chips" aria-label="Sample questions">
+        {% for q in questions %}<button type="button" class="chip-btn small" data-q="{{ q }}">{{ q }}</button>{% endfor %}
+      </div>
+    </form>
+    <div id="rag-out" class="out" aria-live="polite"></div>
+  </div>
+
+  <div class="play js-only" id="demo-tickets">
+    <h3>Ticket hold simulator <span class="tag">5 seats · 60 s holds</span></h3>
+    <p class="muted">Holds reserve bounded inventory and expire. Every change is a ledger entry; the three balances must always sum to capacity.</p>
+    <div class="ticket-controls">
+      <label for="t-user">Buyer</label>
+      <input id="t-user" type="text" maxlength="20" pattern="[A-Za-z0-9 _\-]{1,20}" value="Ava">
+      <label for="t-qty">Seats</label>
+      <select id="t-qty"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+      <button type="button" class="btn btn-primary" id="t-hold">Hold</button>
+      <button type="button" class="btn btn-ghost" id="t-adv">Advance clock 30 s</button>
+      <button type="button" class="btn btn-ghost" id="t-reset">Reset</button>
+    </div>
+    <div id="t-out" class="out" aria-live="polite"></div>
+  </div>
+
+  <div class="play js-only" id="demo-flaky">
+    <h3>Flaky-test analyzer <span class="tag">sample results</span></h3>
+    <p class="muted">Click any run to flip its outcome, then re-read the verdicts. The rule is shown in full.</p>
+    <div id="f-out" class="out" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section" id="experience" aria-labelledby="exp-title">
+  <header class="sec-head reveal">
+    <p class="kicker">04 — Experience</p>
+    <h2 id="exp-title" class="h-section">Where I've worked.</h2>
+  </header>
+  <ol class="timeline">
+    {% for e in p.experience %}
+    <li class="reveal">
+      <p class="when">{{ e.start }} – {{ e.end }}</p>
+      <div>
+        <h3>{{ e.role }}</h3>
+        <p class="where">{{ e.company }}, {{ e.place }}</p>
+        {% if e.points %}<ul>{% for pt in e.points %}<li>{{ pt }}</li>{% endfor %}</ul>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <header class="sec-head reveal">
+    <p class="kicker">05 — Skills</p>
+    <h2 id="skills-title" class="h-section">What I use, and where.</h2>
+    <p class="muted">Linked skills point to the project that uses them. No percentages — evidence over self-rating.</p>
+  </header>
+  <div class="skills">
+    {% for g in p.skills %}
+    <div class="skill-group reveal">
+      <h3>{{ g.group }}</h3>
+      <ul>
+        {% for i in g.items %}
+        <li>{% if i.project %}<a href="#p-{{ i.project }}" title="Evidence: {{ projects[i.project].title }}">{{ i.name }}</a>{% else %}<span>{{ i.name }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="education" aria-labelledby="edu-title">
+  <header class="sec-head reveal">
+    <p class="kicker">06 — Education{% if p.certifications %} &amp; certifications{% endif %}</p>
+    <h2 id="edu-title" class="h-section">{{ p.education.degree }}</h2>
+  </header>
+  <p class="edu reveal">{{ p.education.school }} · {{ p.education.years }} · CGPA {{ p.education.cgpa }}</p>
+  {% if p.certifications %}
+  <h3 class="sub-head" id="certifications">Certifications</h3>
+  <ul class="certs">{% for c in p.certifications %}<li>{{ c }}</li>{% endfor %}</ul>
+  {% endif %}
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <header class="sec-head reveal">
+    <p class="kicker">07 — Contact</p>
+    <h2 id="contact-title" class="h-section">Let's talk.</h2>
+    <p class="muted">Email is the fastest route.</p>
+  </header>
+  <ul class="contact-list reveal">
+    <li><span>Email</span> <a href="mailto:{{ p.profile.email }}" id="email-link">{{ p.profile.email }}</a>
+      <button type="button" class="btn btn-ghost small js-only" id="copy-email" data-email="{{ p.profile.email }}">Copy email</button>
+      <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span></li>
+    <li><span>Location</span> {{ p.profile.location }}</li>
+    <li><span>GitHub</span> <a href="{{ p.profile.github }}" rel="noopener noreferrer" target="_blank">{{ p.profile.github | replace('https://', '') }}</a></li>
+    <li><span>LinkedIn</span> <a href="{{ p.profile.linkedin }}" rel="noopener noreferrer" target="_blank">{{ p.profile.linkedin | replace('https://www.', '') }}</a></li>
+    <li><span>Languages</span> {{ p.profile.languages | join(', ') }}</li>
+  </ul>
+</section>
+{% endblock %}
