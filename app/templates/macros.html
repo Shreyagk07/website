@@ -4,7 +4,7 @@
 
 {% macro project_links(x) %}
 <p class="btn-row">
-  {% if x.url %}<a class="btn btn-primary small" href="{{ x.url }}" target="_blank" rel="noopener noreferrer">Live Demo<span class="sr-only"> of {{ x.title }} (opens in new tab)</span> ↗</a>{% endif %}
+  {% if x.url %}<a class="btn btn-primary small" href="{{ x.url }}" target="_blank" rel="noopener noreferrer">Live Demo<span class="sr-only"> of {{ x.title }} (opens in new tab)</span> <span class="arr" aria-hidden="true">↗</span></a>{% endif %}
   {% if x.github %}<a class="btn btn-ghost small" href="{{ x.github }}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> repository for {{ x.title }}</span> ↗</a>{% endif %}
 </p>
 {% endmacro %}
@@ -12,13 +12,13 @@
 {% macro case_study(x) %}
 <details class="case">
   <summary>Case study</summary>
-  <dl>
+  <div class="case-body"><dl>
     {% if x.problem %}<dt>Problem</dt><dd>{{ x.problem }}</dd>{% endif %}
     <dt>Approach</dt><dd>{{ x.approach }}</dd>
     <dt>Engineering details</dt><dd><ul>{% for d in x.decisions %}<li>{{ d }}</li>{% endfor %}</ul></dd>
     <dt>Stack</dt><dd>{% if x.stack %}<ul class="stack">{% for s in x.stack %}<li>{{ s }}</li>{% endfor %}</ul>{% else %}Not listed in the content supplied.{% endif %}</dd>
     {% if x.reported %}<dt>Resume-reported figures</dt><dd><ul>{% for r in x.reported %}<li>{{ r }}</li>{% endfor %}</ul><p class="note">Claims from the resume, not independently verified benchmarks.</p></dd>{% endif %}
-    <dt>Evidence</dt><dd>{{ x.evidence }}</dd>
-  </dl>
+    <dt>Evidence</dt><dd>{{ x.evidence }}<p class="note">The artwork for this project is an illustration, not a product screenshot.</p></dd>
+  </dl></div>
 </details>
 {% endmacro %}

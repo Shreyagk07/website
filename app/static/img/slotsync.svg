@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><style>@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style><style>.n{animation:n 3.5s ease-in-out infinite}@keyframes n{50%{opacity:.35}}</style>
-<rect width="600" height="400" fill="#d2e8ff"/><circle cx="60" cy="350" r="100" fill="#ffcfc5" opacity=".75"/>
-<rect x="50" y="46" width="500" height="308" rx="16" fill="#fff4e6" stroke="#5f051c" stroke-width="3"/><path d="M50 62 a16 16 0 0 1 16 -16 H534 a16 16 0 0 1 16 16 V96 H50 Z" fill="#5f051c"/>
-<g font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#fee3c5" text-anchor="middle"><text x="140" y="78">Mon</text><text x="230" y="78">Tue</text><text x="320" y="78">Wed</text><text x="410" y="78">Thu</text><text x="500" y="78">Fri</text></g>
-<g stroke="#5f051c" stroke-width="1.2" opacity=".4"><path d="M95 96 V354 M185 96 V354 M275 96 V354 M365 96 V354 M455 96 V354 M50 160 H550 M50 224 H550 M50 288 H550"/></g>
-<g stroke="#5f051c" stroke-width="2.5"><rect x="104" y="108" width="72" height="44" rx="8" fill="#fbf59c"/><rect x="194" y="172" width="72" height="44" rx="8" fill="#ffcfc5"/><rect x="284" y="108" width="72" height="44" rx="8" fill="#aba781"/><rect x="374" y="236" width="72" height="44" rx="8" fill="#fbf59c"/><rect x="464" y="172" width="72" height="44" rx="8" fill="#ffcfc5"/><rect x="104" y="300" width="72" height="44" rx="8" fill="#aba781"/></g>
-<rect class="n" x="284" y="236" width="72" height="44" rx="8" fill="none" stroke="#82192a" stroke-width="3.5" stroke-dasharray="6 5"/><text class="n" x="320" y="266" font-family="Inter,sans-serif" font-size="24" font-weight="700" fill="#82192a" text-anchor="middle">+</text>
-</svg>

@@ -1,0 +1,36 @@
+/* generated from app/static/icons/*.svg: monochrome mask icons (Simple Icons, CC0, + original generic symbols) */
+.ico{display:inline-block;width:20px;height:20px;flex:none;background:currentColor;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.i-apachemaven{--m:url("/static/icons/apachemaven.svg")}
+.i-celery{--m:url("/static/icons/celery.svg")}
+.i-cucumber{--m:url("/static/icons/cucumber.svg")}
+.i-django{--m:url("/static/icons/django.svg")}
+.i-docker{--m:url("/static/icons/docker.svg")}
+.i-fastapi{--m:url("/static/icons/fastapi.svg")}
+.i-g-api{--m:url("/static/icons/g-api.svg")}
+.i-g-chart{--m:url("/static/icons/g-chart.svg")}
+.i-g-check{--m:url("/static/icons/g-check.svg")}
+.i-g-clock{--m:url("/static/icons/g-clock.svg")}
+.i-g-db{--m:url("/static/icons/g-db.svg")}
+.i-g-grid{--m:url("/static/icons/g-grid.svg")}
+.i-g-rank{--m:url("/static/icons/g-rank.svg")}
+.i-g-report{--m:url("/static/icons/g-report.svg")}
+.i-g-scrape{--m:url("/static/icons/g-scrape.svg")}
+.i-g-trace{--m:url("/static/icons/g-trace.svg")}
+.i-githubactions{--m:url("/static/icons/githubactions.svg")}
+.i-jenkins{--m:url("/static/icons/jenkins.svg")}
+.i-jira{--m:url("/static/icons/jira.svg")}
+.i-langchain{--m:url("/static/icons/langchain.svg")}
+.i-langgraph{--m:url("/static/icons/langgraph.svg")}
+.i-locust{--m:url("/static/icons/locust.svg")}
+.i-mysql{--m:url("/static/icons/mysql.svg")}
+.i-openjdk{--m:url("/static/icons/openjdk.svg")}
+.i-pandas{--m:url("/static/icons/pandas.svg")}
+.i-postgresql{--m:url("/static/icons/postgresql.svg")}
+.i-pydantic{--m:url("/static/icons/pydantic.svg")}
+.i-pytest{--m:url("/static/icons/pytest.svg")}
+.i-python{--m:url("/static/icons/python.svg")}
+.i-react{--m:url("/static/icons/react.svg")}
+.i-redis{--m:url("/static/icons/redis.svg")}
+.i-selenium{--m:url("/static/icons/selenium.svg")}
+.i-streamlit{--m:url("/static/icons/streamlit.svg")}
+.i-stripe{--m:url("/static/icons/stripe.svg")}

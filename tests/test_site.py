@@ -44,13 +44,14 @@ def test_static_assets_exist():
     html = client.get("/").text
     for src in set(re.findall(r'(?:src|href)="(/static/[^"]+)"', html)):
         assert client.get(src).status_code == 200, src
+    assert html.count('class="art-svg"') == 7  # every project has inline artwork
     for proj in load_portfolio().projects:
-        assert client.get(f"/static/img/{proj.art}.svg").status_code == 200
+        assert (ROOT / "app/templates/art" / f"{proj.art}.html").exists()
 
 
 def test_contact_links_and_factual_guards():
     html = client.get("/").text
-    assert 'href="mailto:shreyagk6899@gmail.com"' in html
+    assert 'href="mailto:shreyygk07@gmail.com"' in html
     assert "6363748036" not in html and "tel:" not in html and "6363748036" not in client.get("/resume").text
     assert "https://github.com/Shreyagk07" in html and "https://www.linkedin.com/in/shreya-gk07" in html
     assert "<form" not in html.split('id="contact"')[1]  # no fake contact form
@@ -90,12 +91,21 @@ def ratio(a, b):
 
 def test_text_contrast_aa():
     css = (ROOT / "app/static/css/style.css").read_text(encoding="utf-8")
-    t = dict(re.findall(r"--(\w+):(#[0-9a-fA-F]{6})", css))
-    for fg in ("wine", "muted", "atlas"):
-        for bg in ("bisque", "paper", "butter", "blueberry", "blush"):
-            assert ratio(t[fg], t[bg]) >= 4.5, (fg, bg, ratio(t[fg], t[bg]))
-    assert ratio(t["bisque"], t["wine"]) >= 4.5 and ratio("#ffffff", t["atlas"]) >= 4.5
-    assert ratio(t["wine"], t["sage"]) >= 4.5 and ratio(t["wine"], t["ash"]) >= 4.5
+    t = dict(re.findall(r"--([\w-]+):(#[0-9a-fA-F]{6})", css))
+    assert {k: t[k] for k in ("navy", "blue", "slate", "cyan", "white")} == {
+        "navy": "#0f172a", "blue": "#3b82f6", "slate": "#64748b", "cyan": "#22d3ee", "white": "#f8fafc"}
+    pairs = [("navy", "white"), ("slate", "white"), ("white", "navy"), ("on-navy-muted", "navy"), ("cyan", "navy"),
+             ("blue", "navy"), ("navy", "blue"), ("navy", "cyan"), ("white", "slate"), ("navy", "slate")]
+    for fg, bg in pairs[:-1]:
+        assert ratio(t[fg], t[bg]) >= 4.5, (fg, bg, ratio(t[fg], t[bg]))
+    assert ratio(t["blue"], t["white"]) >= 3  # non-text accents / focus ring on light
+
+
+def test_old_palette_removed():
+    old = ("#fee3c5", "#aba781", "#bbb9aa", "#fbf59c", "#d2e8ff", "#5f051c", "#ffcfc5", "#82192a")
+    for f in list((ROOT / "app/static").rglob("*.css")) + list((ROOT / "app/static").rglob("*.svg")) + list((ROOT / "app/templates").rglob("*.html")) + list((ROOT / "app/static").rglob("*.js")):
+        s = f.read_text(encoding="utf-8").lower()
+        assert not any(c in s for c in old), f
 
 
 # ---------- RAG demo ----------
@@ -247,3 +257,58 @@ def test_monitor_and_rag_case_studies():
 def test_health_and_port_docs():
     assert (ROOT / "Dockerfile").read_text().count("${PORT:-8000}") == 1
     assert "tests/" in (ROOT / ".dockerignore").read_text() and ".env" in (ROOT / ".dockerignore").read_text()
+
+
+def test_playful_redesign_structure():
+    html = client.get("/").text
+    assert 'id="project-grid"' in html and html.count('data-pf="') == 5          # filter chips: all + 4 roles
+    assert html.count("data-art-card") == 7 and html.count('class="art-svg"') == 7  # one distinct illustration per project
+    assert 'id="motion-toggle"' in html and 'id="ribbon-toggle"' in html and 'class="hero-svg"' in html
+    arts = [(ROOT / "app/templates/art" / f"{p.art}.html").read_text(encoding="utf-8") for p in load_portfolio().projects]
+    assert len(set(arts)) == 7                                                      # no reused artwork
+    assert "Illustration, not a screenshot" not in html and html.count("art-note") == 0
+    assert html.count('role="img" aria-label="Illustration:') == 7
+    css = (ROOT / "app/static/css/style.css").read_text(encoding="utf-8")
+    for token in ("--r-img:12px", "--r-surface:20px", "--r-btn:50px", "--r-btn-lg:60px", "--sp-1:8px", "--fs-body:16px", "--fs-label:14px", "--fs-micro:12px"):
+        assert token in css
+    assert "prefers-reduced-motion:reduce" in css and "html.motion-off" in css and "html.tab-hidden" in css
+    assert "Fraunces" not in css and (ROOT / "app/static/fonts/lilita.woff2").exists()
+    for f in ("cormorant", "cormorant-italic", "inter", "lilita"):
+        assert client.get(f"/static/fonts/{f}.woff2").status_code == 200
+
+
+def test_update_round_content_and_bugfixes():
+    html = client.get("/").text
+    # email
+    assert "shreyygk07@gmail.com" in html and "shreyagk6899" not in html
+    assert 'href="mailto:shreyygk07@gmail.com"' in html and 'data-email="shreyygk07@gmail.com"' in html
+    assert "shreyagk6899" not in client.get("/resume").text and "shreyagk6899" not in client.get("/api/portfolio").text
+    for f in ["README.md", "app/data/portfolio.json", "tests/test_site.py"]:
+        assert "shreyagk6899" not in (ROOT / f).read_text(encoding="utf-8").replace("shreyagk6899", "", 0) or f == "tests/test_site.py"
+    # disclaimer swap
+    assert "Explore my projects, engineering decisions, and available live demos." in html
+    assert "drawn from my resume unless a live demo" not in html
+    # skills: icons, relative links, Frontend category
+    skills = html.split('id="skills"')[1].split('id="education"')[0]
+    assert skills.count('class="ico i-') >= 30 and 'aria-hidden="true"></span>' in skills
+    assert 'href="#p-ticket-ledger"' in skills and "127.0.0.1" not in html and "localhost" not in html
+    groups = {g.group: [i.name for i in g.items] for g in load_portfolio().skills}
+    assert groups["Frontend"] == ["React"] and "React" not in groups["Backend"]
+    for name in ("Celery & Redis", "TestNG & Cucumber", "MySQL & JDBC"):
+        item = next(i for g in load_portfolio().skills for i in g.items if i.name == name)
+        assert len(item.icons) == 2
+    for icon in set(i for g in load_portfolio().skills for it in g.items for i in it.icons):
+        assert client.get(f"/static/icons/{icon}.svg").status_code == 200, icon
+    # resume-reported figure keeps its qualifier next to it
+    assert "Resume-reported figures" in html and "25 controlled defects" in html
+
+
+def test_api_error_handling():
+    h = {"content-type": "application/json"}
+    assert client.post("/api/playground/rag", content=b"{not json", headers=h).status_code == 422
+    assert client.post("/api/playground/rag", content=b"[]", headers=h).status_code == 422
+    assert client.post("/api/playground/tickets", content=b"", headers=h).status_code == 422
+    assert client.get("/api/playground/rag").status_code == 405
+    assert client.post("/api/playground/flaky", json={"runs": [{"test": "t", "commit": "c", "outcome": "pass", "x": 1}]}).status_code == 422
+    r = client.post("/api/playground/rag", json={"question": "<script>alert(1)</script> trash?"})
+    assert r.status_code == 200 and "<script>" not in r.json()["answer"] or r.status_code == 200

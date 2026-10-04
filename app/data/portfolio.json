@@ -4,7 +4,7 @@
     "headline": "Software Engineer · AI Systems · Test Automation",
     "value_prop": "I build Python systems where AI answers stay grounded in sources, APIs stay predictable, and automated tests give changes a safety net.",
     "summary": "Graduate Engineer Trainee at HCLTech, Bengaluru, with project work across multi-agent AI evaluation, retrieval-augmented generation, transactional backends and Selenium-based test automation.",
-    "email": "shreyagk6899@gmail.com",
+    "email": "shreyygk07@gmail.com",
     "location": "Bangalore, Karnataka",
     "github": "https://github.com/Shreyagk07",
     "linkedin": "https://www.linkedin.com/in/shreya-gk07",
@@ -130,7 +130,8 @@
         "Streamlit"
       ],
       "evidence": "Live hosted demo. Project repository URL not supplied, so no repository button is shown.",
-      "reported": []
+      "reported": [],
+      "art_alt": "Illustration: a challenger agent sends probe questions to a judge agent, which scores responses in a severity grid."
     },
     {
       "id": "web-monitor",
@@ -166,7 +167,8 @@
         "Streamlit"
       ],
       "evidence": "Live hosted demo. No impact metrics or results were supplied, so none are shown. Project repository URL not supplied, so no repository button is shown.",
-      "reported": []
+      "reported": [],
+      "art_alt": "Illustration: layered browser windows, extracted data cards sliding out, and a page-changed alert."
     },
     {
       "id": "agentic-rag",
@@ -202,7 +204,8 @@
         "Streamlit"
       ],
       "evidence": "Live hosted demo. No evaluation scores or numerical improvements were supplied, so none are shown, and the demo is not an independent verification of production readiness. Project repository URL not supplied, so no repository button is shown.",
-      "reported": []
+      "reported": [],
+      "art_alt": "Illustration: documents flow through a ranking node into a cited answer panel."
     },
     {
       "id": "ticket-ledger",
@@ -240,7 +243,8 @@
       "evidence": "Described on the resume only; no demo or repository supplied. The load-test result is the resume's claim and is not independently verified. A throughput number was not supplied, so none is shown.",
       "reported": [
         "Zero oversold tickets under the tested load, while a naive baseline oversold tickets under identical load."
-      ]
+      ],
+      "art_alt": "Illustration: a ticket with a hold countdown above balanced debit and credit ledger columns."
     },
     {
       "id": "slotsync",
@@ -276,7 +280,8 @@
         "pytest"
       ],
       "evidence": "Described on the resume only; no demo or repository supplied.",
-      "reported": []
+      "reported": [],
+      "art_alt": "Illustration: a weekly booking calendar with tenant boundaries and a refused double-booking."
     },
     {
       "id": "orangehrm-qa",
@@ -323,7 +328,8 @@
         "12 defects logged in Jira",
         "40 UI regression scenarios automated",
         "Regression runtime reduced from 45 to 15 minutes with parallel runs on Selenium Grid"
-      ]
+      ],
+      "art_alt": "Illustration: three browser test tiles, two with checks and one with a bug marker, above a parallel-run progress bar."
     },
     {
       "id": "testlab",
@@ -340,7 +346,7 @@
         "swe"
       ],
       "problem": null,
-      "approach": "A mutation-testing harness that injects 25 controlled defects into a Dockerized web application, plus a flaky-test detector, used to judge how effective a Selenium regression suite is.",
+      "approach": "A mutation-testing harness that injects controlled defects into a Dockerized web application, plus a flaky-test detector, used to judge how effective a Selenium regression suite is.",
       "decisions": [
         "Injected defects include removed elements, broken validations, wrong calculations, and delayed loads",
         "Mutation score defined as the share of injected defects detected by the Selenium regression suite",
@@ -359,7 +365,10 @@
         "Allure"
       ],
       "evidence": "Described on the resume only; no repository supplied. No mutation-score percentage was supplied, so none is shown. The playground demo below is a separate illustrative tool, not this project.",
-      "reported": []
+      "reported": [
+        "25 controlled defects injected into the Dockerized web application"
+      ],
+      "art_alt": "Illustration: a grid of injected defects with detected and flaky cells, and five test reruns."
     }
   ],
   "experience": [
@@ -404,31 +413,59 @@
       "items": [
         {
           "name": "Python",
-          "project": "ticket-ledger"
+          "project": "ticket-ledger",
+          "icons": [
+            "python"
+          ]
         },
         {
           "name": "FastAPI",
-          "project": "ticket-ledger"
+          "project": "ticket-ledger",
+          "icons": [
+            "fastapi"
+          ]
         },
         {
           "name": "Django & DRF",
-          "project": "slotsync"
+          "project": "slotsync",
+          "icons": [
+            "django"
+          ]
         },
         {
           "name": "Java",
-          "project": "orangehrm-qa"
+          "project": "orangehrm-qa",
+          "icons": [
+            "openjdk"
+          ]
         },
         {
           "name": "Celery & Redis",
-          "project": "ticket-ledger"
-        },
-        {
-          "name": "React",
-          "project": "ticket-ledger"
+          "project": "ticket-ledger",
+          "icons": [
+            "celery",
+            "redis"
+          ]
         },
         {
           "name": "Pydantic & APScheduler",
-          "project": "web-monitor"
+          "project": "web-monitor",
+          "icons": [
+            "pydantic",
+            "g-clock"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Frontend",
+      "items": [
+        {
+          "name": "React",
+          "project": "ticket-ledger",
+          "icons": [
+            "react"
+          ]
         }
       ]
     },
@@ -437,31 +474,52 @@
       "items": [
         {
           "name": "LangGraph",
-          "project": "red-team"
+          "project": "red-team",
+          "icons": [
+            "langgraph"
+          ]
         },
         {
           "name": "LangChain",
-          "project": "agentic-rag"
+          "project": "agentic-rag",
+          "icons": [
+            "langchain"
+          ]
         },
         {
           "name": "ChromaDB",
-          "project": "agentic-rag"
+          "project": "agentic-rag",
+          "icons": [
+            "g-db"
+          ]
         },
         {
           "name": "RAGAS",
-          "project": "agentic-rag"
+          "project": "agentic-rag",
+          "icons": [
+            "g-chart"
+          ]
         },
         {
           "name": "Langfuse",
-          "project": "red-team"
+          "project": "red-team",
+          "icons": [
+            "g-trace"
+          ]
         },
         {
           "name": "Data analysis & ML in Python",
-          "project": null
+          "project": null,
+          "icons": [
+            "pandas"
+          ]
         },
         {
           "name": "Cross-encoder reranking",
-          "project": "agentic-rag"
+          "project": "agentic-rag",
+          "icons": [
+            "g-rank"
+          ]
         }
       ]
     },
@@ -470,31 +528,54 @@
       "items": [
         {
           "name": "Selenium WebDriver",
-          "project": "orangehrm-qa"
+          "project": "orangehrm-qa",
+          "icons": [
+            "selenium"
+          ]
         },
         {
           "name": "TestNG & Cucumber",
-          "project": "orangehrm-qa"
+          "project": "orangehrm-qa",
+          "icons": [
+            "g-check",
+            "cucumber"
+          ]
         },
         {
           "name": "REST Assured",
-          "project": "orangehrm-qa"
+          "project": "orangehrm-qa",
+          "icons": [
+            "g-api"
+          ]
         },
         {
           "name": "pytest",
-          "project": "slotsync"
+          "project": "slotsync",
+          "icons": [
+            "pytest"
+          ]
         },
         {
           "name": "Selenium Grid",
-          "project": "testlab"
+          "project": "testlab",
+          "icons": [
+            "selenium",
+            "g-grid"
+          ]
         },
         {
           "name": "Allure",
-          "project": "testlab"
+          "project": "testlab",
+          "icons": [
+            "g-report"
+          ]
         },
         {
           "name": "Locust",
-          "project": "ticket-ledger"
+          "project": "ticket-ledger",
+          "icons": [
+            "locust"
+          ]
         }
       ]
     },
@@ -503,15 +584,25 @@
       "items": [
         {
           "name": "PostgreSQL",
-          "project": "slotsync"
+          "project": "slotsync",
+          "icons": [
+            "postgresql"
+          ]
         },
         {
           "name": "MySQL & JDBC",
-          "project": "orangehrm-qa"
+          "project": "orangehrm-qa",
+          "icons": [
+            "mysql",
+            "g-db"
+          ]
         },
         {
           "name": "SQL",
-          "project": "red-team"
+          "project": "red-team",
+          "icons": [
+            "g-db"
+          ]
         }
       ]
     },
@@ -520,31 +611,54 @@
       "items": [
         {
           "name": "Docker",
-          "project": "ticket-ledger"
+          "project": "ticket-ledger",
+          "icons": [
+            "docker"
+          ]
         },
         {
           "name": "GitHub Actions",
-          "project": "slotsync"
+          "project": "slotsync",
+          "icons": [
+            "githubactions"
+          ]
         },
         {
           "name": "Jenkins",
-          "project": "orangehrm-qa"
+          "project": "orangehrm-qa",
+          "icons": [
+            "jenkins"
+          ]
         },
         {
           "name": "Maven & Jira",
-          "project": "orangehrm-qa"
+          "project": "orangehrm-qa",
+          "icons": [
+            "apachemaven",
+            "jira"
+          ]
         },
         {
           "name": "Stripe API",
-          "project": "slotsync"
+          "project": "slotsync",
+          "icons": [
+            "stripe"
+          ]
         },
         {
           "name": "Streamlit",
-          "project": "red-team"
+          "project": "red-team",
+          "icons": [
+            "streamlit"
+          ]
         },
         {
           "name": "BeautifulSoup & Selenium scraping",
-          "project": "web-monitor"
+          "project": "web-monitor",
+          "icons": [
+            "g-scrape",
+            "selenium"
+          ]
         }
       ]
     }

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Shreya G K — Software Engineer · AI Systems · Test Automation{% endblock %}</title>
   <meta name="description" content="{% block desc %}{{ p.profile.value_prop }}{% endblock %}">
-  <meta name="theme-color" content="#fee3c5">
+  <meta name="theme-color" content="#0f172a">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ self.title() | trim }}">
   <meta property="og:description" content="{{ p.profile.value_prop }}">
@@ -13,16 +13,17 @@
   <meta property="og:image:alt" content="Shreya G K — Software Engineer, AI Systems, Test Automation">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/static/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/static/fonts/lilita.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/icons.css">
   <script src="/static/js/app.js" defer></script>
   <script src="/static/js/boot.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Shreya G K, home"><span class="brand-mark" aria-hidden="true">S</span><span>Shreya G K</span></a>
-    <nav aria-label="Primary">
+    <nav class="nav-main" aria-label="Primary">
       <ul>
         <li><a href="/#why">Why hire</a></li>
         <li><a href="/#projects">Projects</a></li>
@@ -30,16 +31,28 @@
         <li><a href="/#experience">Experience</a></li>
         <li><a href="/#skills">Skills</a></li>
         <li><a href="/#contact">Contact</a></li>
-        <li><a href="/resume">Resume</a></li>
       </ul>
     </nav>
+    <a class="brand" href="/" aria-label="Shreya G K, home">Shreya <em>G K</em></a>
+    <div class="hdr-right">
+      <button type="button" class="pill-btn js-only" id="motion-toggle" aria-pressed="false">Pause motion</button>
+      <a class="pill-link" href="/resume"{% if request.url.path == '/resume' %} aria-current="page"{% endif %}>Resume</a>
+    </div>
   </header>
   <main id="main" tabindex="-1">
   {% block main %}{% endblock %}
   </main>
   <footer class="site-footer">
-    <p>© Shreya G K. Project descriptions are drawn from my resume unless a live demo is linked.</p>
-    <p><a href="#main">Back to top ↑</a></p>
+    <div class="foot-inner">
+      <p class="foot-name">Shreya <em>G K</em></p>
+      <ul class="foot-links">
+        <li><a href="mailto:{{ p.profile.email }}">{{ p.profile.email }}</a></li>
+        <li><a href="{{ p.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+        <li><a href="{{ p.profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in new tab)</span></a></li>
+        <li><a href="#main">Back to top ↑</a></li>
+      </ul>
+      <p class="foot-note">Explore my projects, engineering decisions, and available live demos.</p>
+    </div>
   </footer>
 </body>
 </html>

@@ -3,54 +3,29 @@
 {% block main %}
 
 <section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="hero-copy">
-    <p class="kicker reveal" data-d="0">Portfolio · Bengaluru</p>
-    <h1 id="hero-title" class="h-display reveal" data-d="1">{{ p.profile.name }}<span class="dot">.</span></h1>
-    <p class="positioning reveal" data-d="2">{{ p.profile.headline }}.</p>
-    <p class="lede reveal" data-d="3">{{ p.profile.value_prop }}</p>
-    <div class="btn-row reveal" data-d="4">
-      <a class="btn btn-primary" href="#projects">Explore Projects</a>
-      <a class="btn btn-ghost" href="/resume">View Resume</a>
-      <a class="btn btn-ghost" href="#contact">Contact</a>
-      <a class="btn btn-ghost" href="{{ p.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> profile (opens in new tab)</span> ↗</a>
+  <div class="hero-inner">
+    <div class="hero-head">
+      <p class="kicker sticker rise" data-d="0">Portfolio · Bengaluru</p>
+      <h1 id="hero-title" class="h-display"><span class="line"><span class="rise" data-d="1">Shreya <em>G K</em><span class="dot">.</span></span></span></h1>
+      <p class="hero-sans"><span class="line"><span class="rise" data-d="2">Software engineer,</span></span><span class="line"><span class="rise" data-d="3">AI systems &amp; test automation.</span></span></p>
     </div>
-  </div>
-  <div class="hero-art reveal" data-d="2" data-parallax>
-    <svg viewBox="0 0 520 480" role="img" aria-labelledby="hero-art-t" class="hero-svg">
-      <title id="hero-art-t">Illustration of a retrieval graph, a balanced ledger and a test coverage grid layered together</title>
-      <g class="layer" data-depth="6">
-        <rect x="20" y="30" width="300" height="220" rx="22" fill="#d2e8ff"/>
-        <g stroke="#5f051c" stroke-width="1.6" fill="none" opacity=".55">
-          <path d="M80 140 L170 80 M80 140 L170 140 M80 140 L170 200 M170 80 L255 110 M170 140 L255 110 M170 200 L255 170 M170 140 L255 170"/>
-        </g>
-        <circle class="pulse" cx="80" cy="140" r="16" fill="#82192a"/>
-        <g fill="#fee3c5" stroke="#5f051c" stroke-width="2"><circle cx="170" cy="80" r="11"/><circle cx="170" cy="140" r="11"/><circle cx="170" cy="200" r="11"/></g>
-        <g fill="#fbf59c" stroke="#5f051c" stroke-width="2"><circle cx="255" cy="110" r="13"/><circle cx="255" cy="170" r="13"/></g>
-      </g>
-      <g class="layer" data-depth="14">
-        <rect x="230" y="180" width="260" height="170" rx="18" fill="#fee3c5" stroke="#5f051c" stroke-width="2.5"/>
-        <path d="M230 214 H490 M360 180 V350" stroke="#5f051c" stroke-width="1.6"/>
-        <g fill="#5f051c"><rect x="246" y="232" width="90" height="9" rx="4"/><rect x="246" y="258" width="60" height="9" rx="4"/><rect x="246" y="284" width="75" height="9" rx="4"/></g>
-        <g fill="#82192a"><rect class="grow" x="376" y="232" width="90" height="9" rx="4"/><rect class="grow" x="376" y="258" width="60" height="9" rx="4"/><rect class="grow" x="376" y="284" width="75" height="9" rx="4"/></g>
-        <path d="M246 328 H474" stroke="#5f051c" stroke-width="2.5"/>
-      </g>
-      <g class="layer" data-depth="24">
-        <rect x="60" y="290" width="190" height="150" rx="16" fill="#fbf59c" stroke="#5f051c" stroke-width="2.5"/>
-        <g stroke="#5f051c" stroke-width="1.4">
-          <rect x="78" y="310" width="30" height="30" rx="5" fill="#aba781"/><rect x="114" y="310" width="30" height="30" rx="5" fill="#aba781"/><rect x="150" y="310" width="30" height="30" rx="5" fill="#ffcfc5"/><rect x="186" y="310" width="30" height="30" rx="5" fill="#aba781"/>
-          <rect x="78" y="346" width="30" height="30" rx="5" fill="#aba781"/><rect class="flick" x="114" y="346" width="30" height="30" rx="5" fill="#82192a"/><rect x="150" y="346" width="30" height="30" rx="5" fill="#aba781"/><rect x="186" y="346" width="30" height="30" rx="5" fill="#aba781"/>
-          <rect x="78" y="382" width="30" height="30" rx="5" fill="#ffcfc5"/><rect x="114" y="382" width="30" height="30" rx="5" fill="#aba781"/><rect x="150" y="382" width="30" height="30" rx="5" fill="#aba781"/><rect x="186" y="382" width="30" height="30" rx="5" fill="#aba781"/>
-        </g>
-      </g>
-      <path class="draw" d="M320 90 C 420 70, 470 130, 440 180" fill="none" stroke="#82192a" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round"/>
-    </svg>
+    <div class="hero-copy">
+      <p class="support rise" data-d="4">{{ p.profile.value_prop }}</p>
+      <div class="btn-row rise" data-d="5">
+        <a class="btn btn-lg btn-primary" href="#projects">Explore Projects <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-lg btn-ghost" href="/resume">View Resume <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-lg btn-ghost" href="#contact">Contact <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-lg btn-ghost" href="{{ p.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> profile (opens in new tab)</span> <span class="arr" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="hero-art" data-parallax>{% include "art/hero.html" %}</div>
   </div>
 </section>
 
 <section class="section" id="why" aria-labelledby="why-title">
   <header class="sec-head reveal">
     <p class="kicker">01 — Why hire me</p>
-    <h2 id="why-title" class="h-section">Claims, each one tied to evidence.</h2>
+    <h2 id="why-title" class="h-section">Claims, each tied to <em>evidence</em>.</h2>
     <p class="muted">Pick a role to bring the most relevant evidence to the top. Nothing is hidden — the full portfolio stays below.</p>
   </header>
   <div class="filters" role="group" aria-label="Filter evidence by role">
@@ -79,28 +54,21 @@
 <section class="section" id="projects" aria-labelledby="proj-title">
   <header class="sec-head reveal">
     <p class="kicker">02 — Featured projects</p>
-    <h2 id="proj-title" class="h-section">Three live, four on the record.</h2>
+    <h2 id="proj-title" class="h-section">Seven projects, <em>three live</em>.</h2>
     <p class="muted">Live demos are hosted on Streamlit Community Cloud and may need a moment to wake up. Each project carries an honest status label.</p>
   </header>
 
-  {% for x in featured %}
-  <article class="project feature reveal {{ 'flip' if loop.index is even }}" id="p-{{ x.id }}" data-roles="{{ x.roles | join(' ') }}">
-    <div class="art art-{{ x.art }}"><img src="/static/img/{{ x.art }}.svg" alt="" width="600" height="400" loading="lazy"></div>
-    <div class="project-body">
-      {{ status_chip(x, p) }}
-      <h3>{{ x.title }}</h3>
-      <p class="short">{{ x.short }}</p>
-      {{ project_links(x) }}
-      {{ case_study(x) }}
-    </div>
-  </article>
-  {% endfor %}
-
-  <h3 class="sub-head reveal">Also on the record</h3>
-  <div class="others">
-    {% for x in others %}
-    <article class="project compact reveal" id="p-{{ x.id }}" data-roles="{{ x.roles | join(' ') }}">
-      <div class="art art-{{ x.art }}"><img src="/static/img/{{ x.art }}.svg" alt="" width="600" height="400" loading="lazy"></div>
+  <div class="filters" role="group" aria-label="Filter projects by role">
+    <button type="button" class="chip-btn" data-pf="all" aria-pressed="true">All projects</button>
+    {% for r in p.roles %}<button type="button" class="chip-btn" data-pf="{{ r.id }}" aria-pressed="false">{{ r.label }}</button>{% endfor %}
+  </div>
+  <p class="sr-only" id="proj-status" role="status" aria-live="polite"></p>
+  <div class="project-grid" id="project-grid">
+    {% for x in p.projects %}
+    {% set pos = loop.index0 % 2 %}{% set alt = (loop.index0 // 2) % 2 %}
+    {% set nudge = (loop.index0 % 2 == 1) %}{% set span = 12 if (loop.last and pos == 0) else (7 if (pos == 0) == (alt == 0) else 5) %}
+    <article class="project card reveal s{{ span }}{{ ' nudge' if nudge }}" id="p-{{ x.id }}" data-roles="{{ x.roles | join(' ') }}" data-art-card>
+      <div class="art" data-art role="img" aria-label="{{ x.art_alt }}"><div class="art-in">{% include "art/" ~ x.art ~ ".html" %}</div></div>
       <div class="project-body">
         {{ status_chip(x, p) }}
         <h3>{{ x.title }}</h3>
@@ -116,7 +84,7 @@
 <section class="section" id="playground" aria-labelledby="play-title">
   <header class="sec-head reveal">
     <p class="kicker">03 — Engineering playground</p>
-    <h2 id="play-title" class="h-section">Small, deterministic demonstrations.</h2>
+    <h2 id="play-title" class="h-section">Small, <em>deterministic</em> demonstrations.</h2>
     <p class="notice"><strong>Illustrative only.</strong> These run on bundled sample data in this site's own backend. They are not the full project systems, use no LLM or network calls, and their numbers are not project benchmarks.</p>
     <noscript><p class="notice">The playground needs JavaScript to run. The project case studies above work without it.</p></noscript>
   </header>
@@ -162,7 +130,7 @@
 <section class="section" id="experience" aria-labelledby="exp-title">
   <header class="sec-head reveal">
     <p class="kicker">04 — Experience</p>
-    <h2 id="exp-title" class="h-section">Where I've worked.</h2>
+    <h2 id="exp-title" class="h-section">Where I've <em>worked</em>.</h2>
   </header>
   <ol class="timeline">
     {% for e in p.experience %}
@@ -181,16 +149,25 @@
 <section class="section" id="skills" aria-labelledby="skills-title">
   <header class="sec-head reveal">
     <p class="kicker">05 — Skills</p>
-    <h2 id="skills-title" class="h-section">What I use, and where.</h2>
+    <h2 id="skills-title" class="h-section">What I use, and <em>where</em>.</h2>
     <p class="muted">Linked skills point to the project that uses them. No percentages — evidence over self-rating.</p>
   </header>
+  <div class="ribbon-wrap">
+    <div class="ribbon" id="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        {% for _ in range(2) %}<ul>{% for g in p.skills %}{% for i in g.items %}<li>{{ i.name }}</li>{% endfor %}{% endfor %}</ul>{% endfor %}
+      </div>
+    </div>
+    <button type="button" class="chip-btn small js-only" id="ribbon-toggle" aria-pressed="false">Pause ribbon</button>
+    <span class="support-sm muted">Decorative ribbon; the grouped list below has every skill.</span>
+  </div>
   <div class="skills">
     {% for g in p.skills %}
     <div class="skill-group reveal">
       <h3>{{ g.group }}</h3>
       <ul>
         {% for i in g.items %}
-        <li>{% if i.project %}<a href="#p-{{ i.project }}" title="Evidence: {{ projects[i.project].title }}">{{ i.name }}</a>{% else %}<span>{{ i.name }}</span>{% endif %}</li>
+        <li>{% if i.project %}<a class="skill" href="#p-{{ i.project }}" title="Evidence: {{ projects[i.project].title }}">{% for ic in i.icons %}<span class="ico i-{{ ic }}" aria-hidden="true"></span>{% endfor %}<span>{{ i.name }}</span></a>{% else %}<span class="skill">{% for ic in i.icons %}<span class="ico i-{{ ic }}" aria-hidden="true"></span>{% endfor %}<span>{{ i.name }}</span></span>{% endif %}</li>
         {% endfor %}
       </ul>
     </div>
@@ -213,7 +190,7 @@
 <section class="section contact" id="contact" aria-labelledby="contact-title">
   <header class="sec-head reveal">
     <p class="kicker">07 — Contact</p>
-    <h2 id="contact-title" class="h-section">Let's talk.</h2>
+    <h2 id="contact-title" class="h-section">Let's <em>talk</em>.</h2>
     <p class="muted">Email is the fastest route.</p>
   </header>
   <ul class="contact-list reveal">

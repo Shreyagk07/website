@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><style>@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style><style>.c{stroke-dasharray:60;stroke-dashoffset:60;animation:c 6s ease infinite}.c2{animation-delay:.6s}.c3{animation-delay:1.2s}.c4{animation-delay:1.8s}@keyframes c{10%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:60}}</style>
-<rect width="600" height="400" fill="#bbb9aa"/><circle cx="520" cy="330" r="110" fill="#fee3c5" opacity=".7"/>
-<path d="M70 200 H530" stroke="#5f051c" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/>
-<g stroke="#5f051c" stroke-width="3"><rect x="48" y="150" width="100" height="100" rx="18" fill="#fee3c5"/><rect x="178" y="150" width="100" height="100" rx="18" fill="#fbf59c"/><rect x="308" y="150" width="100" height="100" rx="18" fill="#d2e8ff"/><rect x="438" y="150" width="100" height="100" rx="18" fill="#ffcfc5"/></g>
-<g fill="none" stroke="#82192a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path class="c" d="M76 202 L96 224 L124 180"/><path class="c c2" d="M206 202 L226 224 L254 180"/><path class="c c3" d="M336 202 L356 224 L384 180"/><path class="c c4" d="M466 202 L486 224 L514 180"/></g>
-<g font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#5f051c" text-anchor="middle"><text x="98" y="288">UI</text><text x="228" y="288">API</text><text x="358" y="288">DATA</text><text x="488" y="288">E2E</text></g>
-<text x="300" y="80" font-family="Georgia,serif" font-style="italic" font-size="30" fill="#5f051c" text-anchor="middle">hybrid layers</text>
-</svg>

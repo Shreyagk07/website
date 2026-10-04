@@ -51,6 +51,7 @@ class Project(Strict):
     decisions: list[str]
     stack: list[str]
     reported: list[str] = []
+    art_alt: Optional[str] = None
     evidence: str
 
 
@@ -66,6 +67,7 @@ class Experience(Strict):
 class SkillItem(Strict):
     name: str
     project: Optional[str] = None
+    icons: list[str] = []
 
 
 class SkillGroup(Strict):
